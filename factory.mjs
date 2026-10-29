@@ -137,8 +137,8 @@ function indexes() {
 
 // ---------- 유튜브 인기 차트: 유튜브 순위 그대로 제목·링크만, 저장 안 함 ----------
 async function chart() {
-  // ponytail: 제작공장 전용 키(.env)가 생기기 전까지는 AI-Rich Me 키를 읽기만 한다
-  const key = (read('.env').match(/YOUTUBE_API_KEY=(\S+)/) ?? readFileSync(`${HOME}/tenbaggers/.dev.vars`, 'utf8').match(/YOUTUBE_API_KEY=(\S+)/) ?? [])[1];
+  // 제작공장 전용 키(구글 프로젝트 taeyun-factory) — AI-Rich Me 키와 분리해, 이쪽에 문제가 생겨도 AI-Rich Me 는 멈추지 않게
+  const key = (read('.env').match(/YOUTUBE_API_KEY=(\S+)/) ?? [])[1];
   const lines = [];
   for (const regionCode of cfg.regions) {
     const r = await fetch(`https://www.googleapis.com/youtube/v3/videos?${new URLSearchParams({ part: 'snippet', chart: 'mostPopular', regionCode, maxResults: '10', key })}`), j = await r.json();
