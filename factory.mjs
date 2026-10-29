@@ -170,7 +170,8 @@ async function weekly() {
   const charts = await chart();
   if (DRY) return console.log(`  (dry) push·텔레그램 생략. 차트:\n${charts}`);
   publish(week);
-  telegram(`🏭 태윤이네 제작공장 ${week} 주간 보고\n\n기술 소식: ${cfg.site}/reports/${week}-tech.html\n제작 방향: ${cfg.site}/reports/${week}-direction.html\n\n📺 이번 주 유튜브 인기 차트 (유튜브 순위 그대로)\n${charts}`);
+  // 사용자 요청(2026-10-29): 기술 동향은 텔레그램으로 안 보냄 (사이트에만). 유튜브 동향 메모용 인기 차트만 보낸다
+  telegram(`📺 태윤이네 제작공장 · 이번 주 유튜브 인기 차트 (유튜브 순위 그대로)\n\n${charts}`);
 }
 
 function score(plan) {

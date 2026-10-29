@@ -34,6 +34,6 @@
 
 ## 주간 자동 작업
 
-토요일 06:30 launchd `com.taeyun.factory` → `node factory.mjs weekly` → 사이트(https://305rhfueo-ui.github.io/taeyun-factory) 갱신 + 텔레그램.
+토요일 06:30 launchd `com.taeyun.factory` → `node factory.mjs weekly` → 사이트(https://305rhfueo-ui.github.io/taeyun-factory) 갱신 + 텔레그램에는 유튜브 인기 차트만 (기술 동향은 안 보냄 — 사용자 요청).
 로그: `~/Library/Logs/taeyun-factory.log`. 미리 보기만: `node factory.mjs weekly --dry`.
 월 1회 `/graphify docs --update` 로 지식 지도를 만들고 `graphify-out/graph.html` 을 `docs/map.html` 로 복사한다.
