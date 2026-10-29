@@ -189,7 +189,7 @@ function log(json) {
 }
 
 if (job === 'weekly') await weekly();
-else if (job === 'chart') telegram(`📺 태윤이네 제작공장 · 유튜브 인기 차트 (유튜브 순위 그대로)\n\n${await chart()}`);
+else if (job === 'chart') { const t = `📺 태윤이네 제작공장 · 유튜브 인기 차트 (유튜브 순위 그대로)\n\n${await chart()}`; console.log(t); telegram(t); }
 else if (job === 'score') score(arg);
 else if (job === 'log') log(arg);
 else { console.log('usage: node factory.mjs weekly [--dry] | chart | score "<기획>" | log \'<json>\''); process.exit(1); }

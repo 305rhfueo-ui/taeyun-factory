@@ -5,11 +5,8 @@
 
 ## 제작 흐름 (예외 없음)
 
-1. **실장 점검** — 기획은 **유튜브 동향을 토대로** 한다 (사용자 지시, 2026-10-29).
-   - [유튜브 동향](docs/wiki/trends.md)을 먼저 읽고, 어떤 동향을 반영했는지 기획에 한 줄로 적는다. 비어 있거나 오래됐으면 그렇다고 말하고 최근 본 것을 묻는다.
-   - [품질 기준](docs/wiki/quality.md) 등 관련 위키를 읽는다.
+1. **실장 점검** — [품질 기준](docs/wiki/quality.md)을 읽는다. [유튜브 동향](docs/wiki/trends.md)에 사용자가 준 자료가 있으면 참고만 한다 (2026-10-29 사용자: "동향 분석은 그만, 영상 제작에만 집중" — 자료를 달라고 묻지 않는다).
    - `node factory.mjs score "<기획 한 줄>"` 로 nimble 판단을 본다 (모델 추정이지 조회수 확률 아님).
-   - 사용자가 동향 자료(공식 리포트·기사·관찰)를 주면 날짜·출처를 붙여 `docs/wiki/trends.md` 에 정리한다.
 2. **승인1** — 주제·대본·길이·도구를 사용자에게 보여 주고 승인받는다. 결과를 기록한다:
    `node factory.mjs log '{"type":"plan","name":"<이름>","plan":"...","approved":true}'`
 3. **제작** — `~/video-studio/projects/<이름>/` 에서 만든다 (이 저장소에는 영상 파일을 넣지 않는다 — 공개 저장소).
@@ -21,7 +18,7 @@
 5. **승인2** — 최종본을 보여 주고 1~5점 평가를 받는다: `node factory.mjs log '{"type":"final","name":"<이름>","rating":4,"note":"..."}'`
    업로드는 사용자가 한다. 올린 뒤 영상 ID를 받으면 `{"type":"upload","name":"<이름>","videoId":"..."}` 로 기록한다.
 
-이 기록(`data/production.jsonl`)이 실장의 주간 판단과 나중의 laya 학습 재료다. 빠뜨리지 않는다.
+이 기록(`data/production.jsonl`)이 다음 영상을 더 잘 만들 재료다. 빠뜨리지 않는다.
 
 ## 지킬 것
 
@@ -32,8 +29,7 @@
 - 남의 채널 제목·캐릭터·형식을 베끼지 않는다. 패턴만 참고한다.
 - 코드는 ponytail(최소 코드). 일부러 단순하게 만든 곳엔 `ponytail:` 주석.
 
-## 주간 자동 작업
+## 주간 자동 작업 — 중단 (2026-10-29)
 
-토요일 06:30 launchd `com.taeyun.factory` → `node factory.mjs weekly` → 사이트(https://305rhfueo-ui.github.io/taeyun-factory) 갱신 + 텔레그램에는 유튜브 인기 차트만 (기술 동향은 안 보냄 — 사용자 요청).
-로그: `~/Library/Logs/taeyun-factory.log`. 미리 보기만: `node factory.mjs weekly --dry`.
-월 1회 `/graphify docs --update` 로 지식 지도를 만들고 `graphify-out/graph.html` 을 `docs/map.html` 로 복사한다.
+사용자 요청으로 유튜브 동향·기술 동향 분석과 주간 보고(launchd `com.taeyun.factory`)를 멈췄다. 영상 제작에만 집중한다.
+`weekly`·`chart` 명령은 코드에 남아 있지만 사용자가 다시 원할 때만 돌린다. 유튜브 API 감사 신청도 보류.
