@@ -1,0 +1,6 @@
+.env
+data/production.jsonl
+audit-draft.md
+graphify-out/
+node_modules/
+.DS_Store

@@ -1,0 +1,14 @@
+{
+  "site": "https://305rhfueo-ui.github.io/taeyun-factory",
+  "regions": ["KR", "US"],
+  "track": [
+    "remotion-dev/remotion",
+    "heygen-com/hyperframes",
+    "calesthio/OpenMontage",
+    "NandhaKishorM/laya",
+    "jaredpalmer/kev",
+    "msitarzewski/agency-agents",
+    "digitalsamba/claude-code-video-toolkit"
+  ],
+  "search": ["topic:video-generation", "topic:remotion", "ai video editor", "text-to-video", "video agent"]
+}
