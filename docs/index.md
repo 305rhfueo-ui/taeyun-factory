@@ -4,6 +4,7 @@
 
 - [팀 위키](wiki/index.md)
 - [개인정보 처리방침](privacy.md)
+- [이용약관](terms.md)
 
 ## 주간 보고
 - [2026-W44 GitHub 영상 기술 동향](reports/2026-W44-tech.md)

@@ -124,7 +124,7 @@ function indexes() {
   const pages = readdirSync(ROOT + 'docs/wiki').filter(f => f.endsWith('.md') && f !== 'index.md').sort();
   writeFileSync(ROOT + 'docs/wiki/index.md', `# 제작공장 위키\n\n실장이 매주 근거와 함께 고쳐 쓰는 팀의 기억. 재료는 기술 동향, 내 제작 기록, 사용자가 준 공식 리포트·관찰 메모.\n\n${pages.map(f => `- [${title('docs/wiki/' + f)}](${f})`).join('\n')}\n`);
   const reports = readdirSync(ROOT + 'docs/reports').filter(f => f.endsWith('.md')).sort().reverse();
-  writeFileSync(ROOT + 'docs/index.md', `# 태윤이네 제작공장\n\n맥미니 한 대로 영상을 만드는 1인 팀의 주간 기록. 매주 토요일 아침 GitHub 영상 기술 동향과 실장의 제작 방향이 올라온다.\n\n- [팀 위키](wiki/index.md)\n- [개인정보 처리방침](privacy.md)\n\n## 주간 보고\n${reports.map(f => `- [${title('docs/reports/' + f)}](reports/${f})`).join('\n')}\n`);
+  writeFileSync(ROOT + 'docs/index.md', `# 태윤이네 제작공장\n\n맥미니 한 대로 영상을 만드는 1인 팀의 주간 기록. 매주 토요일 아침 GitHub 영상 기술 동향과 실장의 제작 방향이 올라온다.\n\n- [팀 위키](wiki/index.md)\n- [개인정보 처리방침](privacy.md)\n- [이용약관](terms.md)\n\n## 주간 보고\n${reports.map(f => `- [${title('docs/reports/' + f)}](reports/${f})`).join('\n')}\n`);
 }
 
 // ---------- 유튜브 인기 차트: 유튜브 순위 그대로 제목·링크만, 저장 안 함 ----------
