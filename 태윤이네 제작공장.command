@@ -3,4 +3,6 @@
 cd ~/video-studio/taeyun-factory || exit 1
 p=$(ls -td ~/video-studio/projects/*/ 2>/dev/null | head -1)
 [[ -n "$p" && -f "$p/hyperframes.json" ]] && npx -y hyperframes preview --background "$p" >/dev/null 2>&1
+# 다른 Claude 세션이 이 창을 열었을 때 넘어온 표시값 때문에 대화 기록이 저장되지 않는 것을 막는다
+unset CLAUDE_CODE_CHILD_SESSION CLAUDECODE
 exec claude
