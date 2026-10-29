@@ -7,5 +7,5 @@
 - [이용약관](terms.md)
 
 ## 주간 보고
-- [2026-W44 GitHub 영상 기술 동향](reports/2026-W44-tech.md)
-- [2026-W44 실장의 제작 방향](reports/2026-W44-direction.md)
+- [2026년 44주차 영상 기술 소식](reports/2026-W44-tech.md)
+- [2026년 44주차 제작 방향](reports/2026-W44-direction.md)

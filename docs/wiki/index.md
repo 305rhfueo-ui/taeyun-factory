@@ -4,4 +4,5 @@
 
 - [품질 기준](quality.md)
 - [제작 도구](tools.md)
+- [유튜브 동향](trends.md)
 - [유튜브 정책](youtube-policy.md)
