@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // 태윤이네 제작공장 — 주간 보고 + 제작 기록
 //   node factory.mjs weekly [--dry]   GitHub 영상 기술 동향 + 실장의 제작 방향 → docs/ → push → 텔레그램 (+ 유튜브 인기 차트 링크)
+//   node factory.mjs chart              유튜브 인기 차트(순위 그대로)만 텔레그램으로 — 감사 녹화·수시 확인용
 //   node factory.mjs score "<기획>"     제작 전 판단: 위키 + nimble (모델 추정이지 조회수 확률 아님)
 //   node factory.mjs log '<json>'       제작 기록 한 줄 (승인/반려·검수 결과·내 평가·업로드 ID) → data/production.jsonl
 // 유튜브 API 정책(III.E.2·III.E.4.h): 감사 승인 전에는 여러 채널 데이터를 모으거나 지표를 만들지 않는다.
@@ -188,6 +189,7 @@ function log(json) {
 }
 
 if (job === 'weekly') await weekly();
+else if (job === 'chart') telegram(`📺 태윤이네 제작공장 · 유튜브 인기 차트 (유튜브 순위 그대로)\n\n${await chart()}`);
 else if (job === 'score') score(arg);
 else if (job === 'log') log(arg);
-else { console.log('usage: node factory.mjs weekly [--dry] | score "<기획>" | log \'<json>\''); process.exit(1); }
+else { console.log('usage: node factory.mjs weekly [--dry] | chart | score "<기획>" | log \'<json>\''); process.exit(1); }
